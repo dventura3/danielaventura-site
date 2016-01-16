@@ -60,9 +60,9 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .container {
-    max-width: 730px;
+    max-width: 970px;
   }
 
   /* Remove the padding we set earlier */
@@ -79,5 +79,62 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+
+
+/* INGRANDISCO LE DIMENSIONI DEL PADDING SOPRA E SOTTO LA navbar */
+@media(min-width:768px) {
+  .navbar-fixed-top {
+      padding: 25px 0;
+      -webkit-transition: padding .3s;
+      -moz-transition: padding .3s;
+      transition: padding .3s;
+  }
+}
+
+.navbar-brand{
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+
+/* GESTIONE DEL MENU */
+/*
+>> Block:;
+Takes up the full width available, with a new line before and after (display:block;)
+>> Inline:
+Takes up only as much width as it needs, and does not force new lines (display:inline;)
+*/
+#logo {
+  display: block;
+  float: left;
+}
+
+#nav-logo {
+  display: block;
+  float: right;
+}
+
+#logo-name {
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  #logo {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  #nav-logo {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-header button {
+    float: none;
+    margin: 15px 0px;
   }
 }
