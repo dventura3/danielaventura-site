@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name mySiteApp.controller:AboutCtrl
+ * @name mySiteApp.controller:ProfileCtrl
  * @description
- * # AboutCtrl
+ * # MainCtrl
  * Controller of the mySiteApp
  */
 angular.module('mySiteApp')
-  .controller('AboutCtrl', function () {
+  .controller('ContactCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
