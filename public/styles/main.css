@@ -87,7 +87,7 @@ body {
 /* INGRANDISCO LE DIMENSIONI DEL PADDING SOPRA E SOTTO LA navbar */
 @media(min-width:768px) {
   .navbar-fixed-top {
-      padding: 25px 0;
+      padding: 25px 0 0 0;
       -webkit-transition: padding .3s;
       -moz-transition: padding .3s;
       transition: padding .3s;
@@ -126,6 +126,9 @@ Takes up only as much width as it needs, and does not force new lines (display:i
     float: none;
     width: 100%;
     text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(230, 230, 230);
   }
   #nav-logo {
     display: inline-block;
@@ -137,4 +140,29 @@ Takes up only as much width as it needs, and does not force new lines (display:i
     float: none;
     margin: 15px 0px;
   }
+}
+
+/* PROFILE */
+.title-profile{
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  font-size:20px;
+  margin: 0 0 30px 0;
+  color: #A94442;
+}
+
+i.glyphicon {
+    color: #A94442;
+}
+
+.personal-info-value-profile{
+  text-align: left;
+  float: left;
+}
+
+.personal-info-row {
+  color: #717171;
+  font-size: 13px;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: left;
+  margin-bottom: 10px;
 }
