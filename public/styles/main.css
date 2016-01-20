@@ -166,3 +166,100 @@ i.glyphicon {
   text-align: left;
   margin-bottom: 10px;
 }
+
+
+
+
+/* RESUME */
+
+.section-data-resume{
+  padding-right: 60px;
+}
+
+.timeline {
+  margin-bottom: 30px;
+  list-style: none;  /** Elimino puntini di lato **/
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.timeline li {
+  margin-bottom: 20px;
+}
+
+.timeline li .timelineUnit {
+  line-height: 17px;
+  margin-left: 0px;
+  color: #444;
+  font-size: 13px;
+  border-left: 1px solid #e6e6e6;
+  padding-left: 15px;
+}
+
+.timeline li .timelineUnit .timelineDate {
+  line-height: 17px;
+  color: #18bc9c;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: normal;
+  padding: 2px 6px;
+  float: right;
+}
+
+.timeline li .timelineUnit h4 {
+  line-height: 24px;
+  font-size: 15px;
+  color: #444;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.timeline li .timelineUnit h5 {
+  line-height: 18px;
+  font-size: 13px;
+  color: #999;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+
+.skills {
+  margin-bottom: 25px;
+  overflow: hidden;
+  list-style: none;  /** Elimino puntini di lato **/
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.skills li {
+    margin-bottom: 15px;
+    float: left;
+    padding-left: 0px;
+}
+
+.skills li h4 {
+    width: 140px;
+    float: left;
+    font-size: 15px;
+    color: #444;
+}
+
+.skills li .rating {
+    width: 123px;
+    height: 14px;
+    float: left;
+}
+
+.skills li .rating > span {
+    opacity: 0.3;
+    height: 12px;
+    width: 12px;
+    background-color: #757575;
+    display: block;
+    float: left;
+    margin-right: 1px;
+    border: 2px solid #eeeeee;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
