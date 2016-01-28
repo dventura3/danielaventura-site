@@ -173,14 +173,14 @@ i.glyphicon {
 /* RESUME */
 
 .section-data-resume{
-  padding-right: 60px;
+  padding-right: 30px;
 }
 
 .timeline {
   margin-bottom: 30px;
   list-style: none;  /** Elimino puntini di lato **/
-  margin-left: 0;
-  padding-left: 0;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
 .timeline li {
@@ -214,32 +214,52 @@ i.glyphicon {
   margin-bottom: 3px;
 }
 
-.timeline li .timelineUnit h5 {
-  line-height: 18px;
-  font-size: 13px;
-  color: #999;
-  margin-top: 0px;
-  margin-bottom: 5px;
+
+
+
+/*-------------------------------------------------------*/
+/* Resume Section */
+/*-------------------------------------------------------*/
+
+.skills-section, .timeline-section {
+    float: left;
 }
 
+/* Timeline Section */
+.timeline-section {
+    width: 490px;
+    padding-right: 60px;
+}
+
+/* Skills Section */
+.skills-section {
+    width: 270px;
+    clear: both;
+}
 
 .skills {
-  margin-bottom: 25px;
-  overflow: hidden;
-  list-style: none;  /** Elimino puntini di lato **/
-  margin-left: 0;
-  padding-left: 0;
+    margin-bottom: 25px;
+    overflow: hidden;
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px){
+  .skills li h4 {
+      width: 260px;
+  }
 }
 
 .skills li {
-    margin-bottom: 15px;
     float: left;
     padding-left: 0px;
+    display: block;
 }
 
 .skills li h4 {
     width: 140px;
-    float: left;
+    display:inline-block;
     font-size: 15px;
     color: #444;
 }
@@ -247,13 +267,13 @@ i.glyphicon {
 .skills li .rating {
     width: 123px;
     height: 14px;
-    float: left;
+    display:inline-block;
 }
 
 .skills li .rating > span {
     opacity: 0.3;
-    height: 12px;
-    width: 12px;
+    height: 16px;
+    width: 16px;
     background-color: #757575;
     display: block;
     float: left;
@@ -263,3 +283,4 @@ i.glyphicon {
     -moz-border-radius: 20px;
     border-radius: 20px;
 }
+
