@@ -9,10 +9,14 @@
  */
 app.controller('ProfileCtrl', function ($scope, $window) {
 
+
+  /*
+  * The list of CountryIDs is here: https://google-developers.appspot.com/chart/interactive/docs/gallery/geochart
+  */
   $scope.chart = {
     type: "GeoChart",
     data: [
-      ['Locale', 'Pictures', {role: 'tooltip', p:{html:true}}],
+      ['Locale', 'Colour', {role: 'tooltip', p:{html:true}}],
       ['US', 0, ''],
       ['DE', 2, ''],
       ['IE', 9, ''],
@@ -37,8 +41,8 @@ app.controller('ProfileCtrl', function ($scope, $window) {
       displayMode: 'regions',
       enableRegionInteractivity: true,
       tooltip: {
-            isHtml: true
-        }
+        isHtml: true
+      }
     }
   };
 
