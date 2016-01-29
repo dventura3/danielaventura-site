@@ -31,14 +31,6 @@ app.controller('ProfileCtrl', function ($scope, $window) {
     ],
     options: {
     	legend:'none',
-      width: '600',
-			height: '350',
-			chartArea:{
-			    left: 0,
-			    top: 20,
-			    width: '600',
-			    height: '350',
-			},
       colorAxis: {
         colors: ['#4bb5f3', '#FADC41', '#c44949', '#d74a12', '#0e9a0e', '#55c2ac', '#7c4b91', '#fadc41', '#0d6cca', '#7c4897']
       },
