@@ -12,22 +12,22 @@ app.controller('ProfileCtrl', function ($scope, $window) {
   $scope.chart = {
     type: "GeoChart",
     data: [
-      ['Locale', 'Visits'],
-      ['US', 0],
-      ['DE', 2],
-      ['IE', 9],
-      ['GB', 5],
-      ['ES', 4],
-      ['IT', 7],
-      ['BE', 1],
-      ['NL', 7],
-      ['FR', 0],
-      ['BR', 2],
-      ['CH', 4],
-      ['HU', 5],
-      ['IS', 3],
-      ['LU', 3],
-      ['RU', 1]
+      ['Locale', 'Pictures', {role: 'tooltip', p:{html:true}}],
+      ['US', 0, ''],
+      ['DE', 2, ''],
+      ['IE', 9, ''],
+      ['GB', 5, ''],
+      ['ES', 4, ''],
+      ['IT', 7, ''],
+      ['BE', 1, ''],
+      ['NL', 7, ''],
+      ['FR', 0, ''],
+      ['BR', 2, ''],
+      ['CH', 4, ''],
+      ['HU', 5, ''],
+      ['IS', 3, ''],
+      ['LU', 3, ''],
+      ['RU', 1, '']
     ],
     options: {
     	legend:'none',
@@ -36,7 +36,10 @@ app.controller('ProfileCtrl', function ($scope, $window) {
       },
       displayMode: 'regions',
       enableRegionInteractivity: true,
-    },
+      tooltip: {
+            isHtml: true
+        }
+    }
   };
 
 	/*
