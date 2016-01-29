@@ -8,14 +8,14 @@
  *
  * Main module of the application.
  */
-angular
-  .module('mySiteApp', [
+var app = angular.module('mySiteApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute'
-  ])
-  .config(function ($routeProvider) {
+    'ngRoute',
+    'googlechart'
+  ]);
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/profile', {
         templateUrl: 'views/profile.html',
@@ -40,9 +40,9 @@ angular
       .otherwise({
         redirectTo: '/profile'
       });
-  })
-  .controller('HeaderCtrl', function ($scope, $location) { 
+  });
+app.controller('HeaderCtrl', function ($scope, $location) { 
     $scope.isActive = function (viewLocation) { 
       return viewLocation === $location.path();
     };
-  });
+});
