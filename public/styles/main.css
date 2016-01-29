@@ -214,6 +214,19 @@ i.glyphicon {
   margin-bottom: 10px;
 }
 
+.center-profile-img{
+  display: block;
+  text-align:center;
+}
+
+.profile-img{
+  display: inline-block;
+  float: none;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+}
 
 .polaroid-container{
   display: block;
