@@ -243,6 +243,12 @@ i.glyphicon {
   width: 82%;
 }
 
+.polaroid-container .travel-img-vertical{
+  display: inline-block;
+  float: none;
+  width: 60%;
+}
+
 .polaroid-container .arrow-left{
   display: inline-block;
   float: none;
