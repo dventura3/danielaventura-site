@@ -7,7 +7,17 @@
  * # MainCtrl
  * Controller of the mySiteApp
  */
-app.controller('ProfileCtrl', function ($scope, $window) {
+app.controller('ProfileCtrl', function ($scope, $window, Travels) {
+
+  //init
+  $scope.albums = Travels.get({country:"ES"}, function(){});
+
+
+  /*
+  var photos = Travels.get({country:"ES", albumName:"Bilbao"}, function(){
+    console.log(JSON.stringify(photos.data));
+  });
+  */
 
 
   /*
@@ -60,6 +70,32 @@ app.controller('ProfileCtrl', function ($scope, $window) {
   * Function to manage the chart on click listener.
   */
   $scope.regionClick = function(region) {
-    console.log(region.region);
+    //console.log(region.region);
+    var albums_found = Travels.get({country:region.region}, function(){
+      if(albums_found.error == null){
+        $scope.albums = albums_found;
+      }
+    }, function(e){
+      console.log('Error: '+ e.data.message);
+      $scope.albums = [];
+    });
   }
+
+
+  $scope.albumSelected = null;
+
+  $scope.$watch('albumSelected', function(value) {
+    if($scope.albumSelected != null){
+      $scope.albums.data.forEach(function(album){
+        if(album.path == value){
+          //console.log(album.country);
+          //console.log(album.name);
+          var photos_found = Travels.get({country:album.country, albumName:album.name}, function(){
+            //console.log(JSON.stringify(photos_found.data));
+          });
+        }
+      });
+    }
+  });
+
 });

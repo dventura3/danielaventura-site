@@ -24,12 +24,12 @@ exports.error = function (code, message) {
 
 
 exports.no_albums_by_country = function () {
-    return exports.error(403, "No albums for the specified country have been found!");
+    return exports.error(404, "No albums for the specified country have been found!");
 };
 
 
 exports.no_photos_by_album = function () {
-    return exports.error(403, "No photos for the specified album have been found!");
+    return exports.error(404, "No photos for the specified album have been found!");
 };
 
 
