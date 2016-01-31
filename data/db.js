@@ -41,19 +41,19 @@ exports.init = function (callback) {
     async.waterfall([
         // 1. open database connection
         function (cb) {
-          console.log("\n** 1. open db");
+          console.log("** 1. open db");
           db.open(cb);
         },
 
         // 2. create collections for our albums and photos. if
         //    they already exist, then we're good.
         function (db_conn, cb) {
-          console.log("\n** 2. create/open albums collections.");
+          console.log("** 2. create/open albums collections.");
           db.collection("albums", cb);
         },
 
         function (albums_coll, cb) {
-        	console.log("\n** 3. create/open photos collections.");
+        	console.log("** 3. create/open photos collections.");
           exports.albums = albums_coll;
           db.collection("photos", cb);
         },

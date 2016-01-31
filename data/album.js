@@ -1,7 +1,6 @@
 (function() {
 
-var db = require('./db.js'),
-		async = require('async');
+var db = require('./db.js');
 
 exports.version = "0.1.0";
 
@@ -31,6 +30,22 @@ exports.all_albums = function(sort_name_field, sort_order_field, cb){
 	db.albums.find()
 					 .sort(sort)
 					 .toArray(cb);
+}
+
+
+exports.albums_by_country = function(country_name, cb){
+	db.albums.find({country:country_name})
+					 .sort({year:-1})
+					 .toArray(cb);
+}
+
+
+exports.album_by_country_and_by_name = function(country_name, album_name, cb){
+	db.albums.findOne({"country":country_name, "name":album_name}, function(err, album_found){
+		//if err is NOT null => cb is the final function in the waterfall chain
+		//if err is null => cb is the next function in the waterfall chain
+		cb(err, album_found);
+	});
 }
 
 

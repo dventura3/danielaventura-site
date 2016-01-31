@@ -38,9 +38,9 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.get("/v1/albums", manager.getAlbums); // /albums => Tutti
-//app.get("/v1/albums/:country/", getAlbumsForCountry);  // /albums/ES => Solo Spagna
-//app.get("/v1/albums/:country/:albumName", getPhotos);  // /albums/ES/Bilbao => Solo di Bilbao
+app.get("/v1/albums", manager.getAlbums);
+app.get("/v1/albums/:country", manager.getAlbumsByCountry);
+app.get("/v1/albums/:country/:albumName", manager.getPhotos);
 
 app.all("*", manager.pageNotFound);
 
@@ -51,9 +51,9 @@ db.init(function (err, results) {
         console.error(err);
         process.exit(-1);
     }
-    //After having initialized my db, the server can start!
+    //After having initialized my db, the server can start up!
     app.listen(SERVER_PORT, SERVER_HOST);
-    console.log("\n** Server started!");
+    console.log("** 4. server started!\n");
 });
 
 
