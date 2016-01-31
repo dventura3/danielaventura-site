@@ -3,7 +3,9 @@
   "private": true,
   "devDependencies": {
     "express" : "^4.12.0",
-    "body-parser": "^1.12.0"
+    "body-parser": "^1.12.0",
+    "async" : "~1.5",
+    "mongodb" : "~2.0"
   },
   "engines": {
     "node": ">=0.10.0"
