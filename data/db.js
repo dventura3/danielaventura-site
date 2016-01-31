@@ -1,9 +1,12 @@
+(function() {
+
 var Db = require('mongodb').Db,
     Connection = require('mongodb').Connection,
     Server = require('mongodb').Server,
     async = require('async'),
     local = require("../local.config");
 
+exports.version = "0.1.0";
 
 var host = local.config.db_config.host
     ? local.config.db_config.host
@@ -65,3 +68,5 @@ exports.init = function (callback) {
 
 exports.albums = null;
 exports.photos = null;
+
+})();

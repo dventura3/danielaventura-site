@@ -37,16 +37,6 @@ app.use(express.static(__dirname + '/public'));
 /*--------------- Routes -------------------*/
 
 
-/*
-albums : [
-    {
-        "_id" : "/images/travels/ES/Bilbao",
-        "name" : "Bilbao-Internship",
-        "year" : "2013",
-        "country" : "ES"
-    }
-]
-*/
 
 app.get("/v1/albums", manager.getAlbums); // /albums => Tutti
 //app.get("/v1/albums/:country/", getAlbumsForCountry);  // /albums/ES => Solo Spagna

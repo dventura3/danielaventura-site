@@ -1,6 +1,6 @@
+(function() {
 
 exports.version = '0.1.0';
-
 
 exports.send_failure = function(err, res){
 	var code = (err.code) ? err.code : err.name;
@@ -21,3 +21,5 @@ exports.error = function (code, message) {
   e.code = code;
   return e;
 };
+
+})();
