@@ -9,8 +9,15 @@
  */
 app.controller('ProfileCtrl', function ($scope, $window, Travels) {
 
-  //init
-  $scope.albums = Travels.get({country:"ES"}, function(){});
+  $scope.albumSelected = null;
+  $scope.photos = null;
+  $scope.indexShowedPhoto = 0;
+
+  //init album and photo to show the first time!
+  //To defautl: album => ESPANIA & Photo => with ID 0
+  $scope.albums = Travels.get({country:"ES"}, function(){
+    $scope.albumSelected = $scope.albums.data[0].path;
+  });
 
 
   /*
@@ -82,8 +89,12 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
   }
 
 
-  $scope.albumSelected = null;
-
+  
+  /*
+  * I watch the variable albumSelected (associated to the 'select' HTML 
+  * component) in order to change the list of photos associated to the 
+  * album when the user select a new album to show.
+  */
   $scope.$watch('albumSelected', function(value) {
     if($scope.albumSelected != null){
       $scope.albums.data.forEach(function(album){
@@ -91,11 +102,33 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
           //console.log(album.country);
           //console.log(album.name);
           var photos_found = Travels.get({country:album.country, albumName:album.name}, function(){
-            //console.log(JSON.stringify(photos_found.data));
+              //console.log(JSON.stringify(photos_found.data));
+              if(photos_found.error == null){
+                $scope.photos = photos_found.data;
+                $scope.indexShowedPhoto = 0;
+              }
+            }, function(e){
+              console.log('Error on Photos: '+ e.data.message);
           });
         }
       });
     }
   });
+
+
+  $scope.arrowManagement = function(arrow){
+    if(arrow == "LEFT"){
+      if($scope.indexShowedPhoto == 0)
+        $scope.indexShowedPhoto = $scope.photos.length - 1;
+      else
+        $scope.indexShowedPhoto = $scope.indexShowedPhoto - 1;
+    }
+    if(arrow == "RIGHT"){
+      if($scope.indexShowedPhoto == ($scope.photos.length - 1))
+        $scope.indexShowedPhoto = 0;
+      else
+        $scope.indexShowedPhoto = $scope.indexShowedPhoto + 1;
+    }
+  }
 
 });
