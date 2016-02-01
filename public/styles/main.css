@@ -321,6 +321,20 @@ i.glyphicon {
   margin-bottom: 3px;
 }
 
+.timeline .timeline-img{
+  display: block;
+  clear: both;
+}
+
+.timeline .timeline-img-border{
+  margin: 0px 10px 0px 0px;
+}
+
+.img-screenshot-phd-presentation{
+  width: 100%;
+  height: 100%;
+}
+
 
 /* RIGHT */
 
