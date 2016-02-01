@@ -335,6 +335,18 @@ i.glyphicon {
   height: 100%;
 }
 
+.img-content{
+  display: block;
+  clear: both;
+  text-align: center;
+}
+
+.img-affiancate{
+  margin: 0px 10px 0px 0px;
+  width: 30%;
+  height: 30%;
+}
+
 
 /* RIGHT */
 
