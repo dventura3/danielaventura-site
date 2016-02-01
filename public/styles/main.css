@@ -330,6 +330,12 @@ i.glyphicon {
   margin: 0px 10px 0px 0px;
 }
 
+.timeline .timeline-img-fixed-dimension{
+  margin: 0px 10px 0px 0px;
+  width: 35px;
+  height: 35px;
+}
+
 .img-screenshot-phd-presentation{
   width: 100%;
   height: 100%;
@@ -346,6 +352,7 @@ i.glyphicon {
   width: 30%;
   height: 30%;
 }
+
 
 
 /* RIGHT */
