@@ -82,10 +82,12 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
     var albums_found = Travels.get({country:region.region}, function(){
       if(albums_found.error == null){
         $scope.albums = albums_found;
+        $scope.albumSelected = $scope.albums.data[0].path;
       }
     }, function(e){
       console.log('Error: '+ e.data.message);
       $scope.albums = [];
+      no_data();
     });
   }
 
@@ -111,11 +113,27 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
               }
             }, function(e){
               console.log('Error on Photos: '+ e.data.message);
+              no_data();
           });
         }
       });
     }
   });
+
+  var no_data = function(){
+    $scope.photos = [{
+        path : '/images/travels/no-img.png',
+        pathThumbnail : '/images/travels/no-img.png',
+        albumID: '-',
+        date : '-',
+        location : '-',
+        description : '',
+        orientation : 'v'
+      }
+    ];
+    $scope.indexShowedPhoto = 0;
+    setClassShowedPhoto($scope.photos[0].orientation);
+  }
 
 
   $scope.arrowManagement = function(arrow){
