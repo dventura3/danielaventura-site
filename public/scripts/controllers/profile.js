@@ -12,6 +12,7 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
   $scope.albumSelected = null;
   $scope.photos = null;
   $scope.indexShowedPhoto = 0;
+  $scope.classShowedPhoto = null;
 
   //init album and photo to show the first time!
   //To defautl: album => ESPANIA & Photo => with ID 0
@@ -106,6 +107,7 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
               if(photos_found.error == null){
                 $scope.photos = photos_found.data;
                 $scope.indexShowedPhoto = 0;
+                setClassShowedPhoto($scope.photos[0].orientation);
               }
             }, function(e){
               console.log('Error on Photos: '+ e.data.message);
@@ -129,6 +131,16 @@ app.controller('ProfileCtrl', function ($scope, $window, Travels) {
       else
         $scope.indexShowedPhoto = $scope.indexShowedPhoto + 1;
     }
+    //set class
+    setClassShowedPhoto($scope.photos[$scope.indexShowedPhoto].orientation);
   }
+
+  var setClassShowedPhoto = function(orientation){
+    if(orientation == 'v')
+      $scope.classShowedPhoto = "travel-img-vertical";
+    else
+      $scope.classShowedPhoto = "travel-img-horizontal";
+  }
+
 
 });

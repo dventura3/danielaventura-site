@@ -102,14 +102,16 @@
 
     <!-- <tt>repeatSelect = {{albumSelected}}</tt><br/> -->
 
-    <div style="margin: 20px 0px 20px 0px; clear:both; text-align:center;">
+    <div style="margin: 20px 0px 0px 0px; clear:both; text-align:center;">
         <i class="glyphicon glyphicon-calendar"></i> <label style="margin-right:20px">{{photos[indexShowedPhoto].date}}</label>
+    </div>
+    <div style="margin: 0px 0px 20px 0px; clear:both; text-align:center;">
         <i class="glyphicon glyphicon-map-marker"></i> <label>{{photos[indexShowedPhoto].location}}</label>
     </div>
 
     <div class="polaroid-container">
       <i class="glyphicon glyphicon-chevron-left arrow-left" ng-click="arrowManagement('LEFT')"></i>
-      <img class="img-responsive travel-img" ng-src="{{photos[indexShowedPhoto].pathThumbnail}}" />
+      <img class="img-responsive ng-class:classShowedPhoto;" ng-src="{{photos[indexShowedPhoto].pathThumbnail}}" />
       <i class="glyphicon glyphicon-chevron-right arrow-right" ng-click="arrowManagement('RIGHT')"></i>
     </div>
 
