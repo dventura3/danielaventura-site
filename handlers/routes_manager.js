@@ -66,6 +66,40 @@ Photo.prototype.response_obj = function() {
     };
 };
 
+/**
+* TMP
+*/
+exports.getNewAlbums = function(req, res){
+	album_data.all_albums("year", 'd', function(err, results){
+		if(err){
+			helper.send_failure(err, res);
+		}else{
+			var albums = [];
+			results.forEach(function(album){
+				albums.push(new Album(album).response_obj());
+			});
+			res.writeHead(200, {"Content-Type": "application/json"});
+  		res.end(JSON.stringify(albums) + "\n");
+		}
+	});
+}
+
+exports.postNewAlbums = function(req, res){
+	var body = "";
+  req.on('data', function (chunk) {
+    body += chunk;
+    console.log("qui");
+  });
+  req.on('end', function () {
+    console.log('body: ' + body);
+    var jsonObj = JSON.parse(body);
+  	console.log(jsonObj);
+  })  
+  res.end('Hello, World!');
+}
+
+
+
 
 
 /**

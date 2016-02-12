@@ -42,6 +42,9 @@ app.get("/v1/albums", manager.getAlbums);
 app.get("/v1/albums/:country", manager.getAlbumsByCountry);
 app.get("/v1/albums/:country/:albumName", manager.getPhotos);
 
+app.get("/v1/new_albums", manager.getNewAlbums);
+app.post("/v1/new_albums", manager.postNewAlbums);
+
 app.all("*", manager.pageNotFound);
 
 
