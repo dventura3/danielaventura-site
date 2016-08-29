@@ -8,10 +8,14 @@
  * Controller of the mySiteApp
  */
 angular.module('mySiteApp')
-  .controller('ContactCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('ContactCtrl', ['$scope', function ($scope) {
+
+
+    $scope.user = {};
+
+    $scope.sendMessage = function(user){
+    	$scope.user = user;
+    	alert("Sorry, Not implemented yet!");
+    }
+
+  }]);

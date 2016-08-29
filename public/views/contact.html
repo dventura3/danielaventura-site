@@ -1,6 +1,21 @@
-<div class="jumbotron">
-  <h1>Work In Progress</h1>
-  <p class="lead">
-    <img src="images/work_in_progress.png" alt="WIP"><br>
-  </p>
+
+<form novalidate class="form-group bs-example">
+  <label class="control-label" >Your Name</label>
+  <input type="text" class="form-control" ng-model="user.name" /><br />
+  <label class="control-label" >Your Email</label>
+  <input type="email" class="form-control" ng-model="user.email" /><br />
+  <label class="control-label" >Your Message</label>
+  <textarea class="form-control" ng-model="user.message" ></textarea>
+  <input type="submit" class="btn btn-primary" ng-click="sendMessage(user)" value="Send" />
+</form>
+
+<br><br><br><br><br>
+
+<div>
+	{{user.name}}
+	<br>
+	{{user.email}}
+	<br>
+	{{user.message}}
 </div>
+
